@@ -1,0 +1,61 @@
+#room {
+    background-color: black;
+    border: solid 2px black;
+    alignment: center;
+    height: 50%;
+    width: 60%;
+    padding: 30px;
+}
+.light {
+    font-size: 40px;
+    border-radius: 40px;
+}
+#redbutton {
+    background-color: darkred;
+}
+#redbutton {
+    background-color: darkgreen;
+}
+#redbutton {
+    background-color: darkblue;
+}
+#out1, #out3 {
+    font-family: monospace;
+}
+#out2 {
+    font-family: cursive;
+    background-color: black;
+    font-size: 30px;
+    width: 200px;
+    padding-top: -10px;
+    scroll-padding-bottom: 10px;
+}
+#out4 {
+    font-family: cursive;
+    background-color: antiquewhite;
+    font-size: 30px;
+    width: 200px;
+    padding-top: -10px;
+    scroll-padding-bottom: 10px;
+}
+#canvas {
+    background-color: white;
+    border: solid 2px black;
+    alignment: center;
+    height: 50%;
+    width: 60%;
+    padding: 30px;
+}
+.brush {
+    font-size: 40px;
+    border-radius: 40px;
+}
+#yellowbrush {
+    background-color: yellow;
+}
+#magentabrush {
+    background-color: magenta;
+}
+#cyanbrush {
+    background-color: cyan;
+}

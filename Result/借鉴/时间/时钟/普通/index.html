@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>显示时间（时钟）</title>
+    <style type="text/css">
+        #Canvas {
+            display: block;
+            margin: auto;
+            background-color: darkslategrey;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            window.requestAnimationFrame(draw_HMS)
+        }
+        function draw_arc() { //画表盘
+            var pi = Math.PI
+            var Tools = document.getElementById("Canvas").getContext("2d")
+            Tools.save()
+            Tools.translate(250, 250)
+            Tools.beginPath()
+            Tools.arc(0, 0, 155, 0, pi * 2, true)
+            Tools.lineWidth = 5
+            Tools.strokeStyle = "bisque"
+            Tools.closePath()
+            Tools.stroke()
+            Tools.restore()
+            Tools.save()
+            Tools.translate(250, 250)
+            Tools.beginPath()
+            Tools.arc(0, 0, 5, 0, pi * 2, true)
+            Tools.fill()
+            Tools.closePath()
+            Tools.restore()
+            var i;
+            for (i = 1; i <= 60; i++) {
+                Tools.save()
+                Tools.translate(250, 250)
+                Tools.rotate(-pi / 2 + (pi / 180) * (360 / 60) * i)
+                Tools.beginPath()
+                if (i % 5 == 0) {
+                    Tools.moveTo(114, 0)
+                    Tools.strokeStyle = "crimson"
+                    Tools.lineWidth = 5
+                }
+                else {
+                    Tools.moveTo(120, 0)
+                    Tools.strokeStyle = "aqua"
+                    Tools.lineWidth = 3
+                }
+                Tools.lineTo(150, 0)
+                Tools.closePath()
+                Tools.stroke()
+                Tools.restore()
+            }
+        }
+        function draw_HMS() {  //计算 时分秒针弧度制，设置属性
+            window.setTimeout(function () {
+                window.requestAnimationFrame(draw_HMS)
+            }, 1000 / 5)
+            clear()
+            draw_arc()
+            var pi = Math.PI
+            var dat = new Date()
+            var hours = dat.getHours()  //获取小时
+            var minuntes = dat.getMinutes()  //获取分钟
+            var seconds = dat.getSeconds()   //获取秒
+            var seconds_angle = pi / 180 * (360 / 60) * seconds   //计算秒针的弧度
+            var minuntes_angle = pi / 180 * (360 / 60) * minuntes + seconds_angle / 60   //计算分针的弧度  
+            var hours_angle = pi / 180 * (360 / 12) * hours + minuntes_angle / 12    //计算时针的弧度
+            var seconds_length = 108   //设置指针长度
+            var minuntes_length = 90
+            var hours_length = 62
+            var seconds_width = 2   //设置指针宽度
+            var minuntes_width = 3
+            var hours_width = 4
+            var seconds_color = "red"   //设置指针颜色
+            var minuntes_color = "green"
+            var hours_color = "darkred"
+            var seconds_size = 25
+            var minuntes_size = 15
+            var hours_size = 10
+            draw_h_m_s(seconds_angle, seconds_length, seconds_width, seconds_color, seconds_size, pi)
+            draw_h_m_s(minuntes_angle, minuntes_length, minuntes_width, minuntes_color, minuntes_size, pi)
+            draw_h_m_s(hours_angle, hours_length, hours_width, hours_color, hours_size, pi)
+        }
+        function draw_h_m_s(angle, length, width, color, size, pi) {  //画 时分秒针
+            var Tools = document.getElementById("Canvas").getContext("2d")
+            Tools.save()
+            Tools.translate(250, 250)   //将每次画指针的原点移到（250，250）
+            Tools.rotate(-pi / 2 + angle)
+            Tools.lineWidth = width
+            Tools.beginPath()
+            Tools.moveTo(-size, 0)
+            Tools.lineTo(length, 0)
+            Tools.strokeStyle = color
+            Tools.stroke()
+            Tools.closePath()
+            Tools.restore()
+        }
+        function clear() {  //清除画布
+            var Tools = document.getElementById("Canvas")
+            console.log("2")
+            var ss = Tools.getContext("2d")
+            ss.clearRect(0, 0, 500, 500)
+        }
+    </script>
+</head>
+<body>
+    <canvas id="Canvas" width="500" height="500"></canvas>
+</body>
+</html>

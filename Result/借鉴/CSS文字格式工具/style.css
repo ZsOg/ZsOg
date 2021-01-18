@@ -1,0 +1,16 @@
+#box {
+    text-align: center;
+    width: 60%;
+    background-color: lavender;
+    border: solid black 1px;
+    border-radius: 10px;
+}
+#output {
+    text-align: left;
+}
+h3 {
+    text-align: center;
+}
+#horizontalShadow, #verticalShadow, #blurShadow {
+    width: 60px;
+}

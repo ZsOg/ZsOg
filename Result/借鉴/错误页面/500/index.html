@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>500 Error Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style id="6807e850-157a-469e-88c2-0a9c13968b4f">
+        #ShowUpBox {
+            all: unset;
+            width: auto;
+            height: auto;
+            position: absolute;
+            z-index: 10240;
+            color: black;
+            display: inline-block;
+            line-height: 0;
+            vertical-align: baseline;
+            box-sizing: content-box;
+        }
+
+        #showUpBody {
+            min-width: 20px;
+            max-width: 750px;
+            min-height: 20px;
+            max-height: 500px;
+            display: block;
+            border: solid 2px rgb(144, 144, 144);
+            border-radius: 1px;
+            background: rgba(252, 252, 252, 1);
+        }
+
+        #popupWrapper {
+            all: unset;
+            margin: 3px 2px 3.8px 2px;
+            display: block;
+            line-height: 0;
+            font-size: 0;
+        }
+
+        #transPanel {
+            line-height: normal;
+            width: auto;
+            font-size: 16px;
+            overflow: auto;
+            display: none;
+        }
+
+        #popupWrapper>a {
+            all: unset;
+            margin: 0px 2px;
+        }
+
+        #popupWrapper img {
+            all: unset;
+            margin: 0px;
+            height: 24px;
+            width: 24px;
+            border-radius: 0px;
+            padding: 0px;
+            display: inline-block;
+            transition-duration: 0.1s;
+            -moz-transition-duration: 0.1s;
+            -webkit-transition-duration: 0.1s;
+        }
+
+        #popupWrapper img:hover {
+            margin: -1px -1px;
+            height: 26px;
+            width: 26px;
+        }
+
+        #popupTip {
+            display: inline-block;
+            clear: both;
+            height: 9px;
+            width: 9px;
+        }
+
+        .tipUp {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAZElEQVQYlXXMIQ4CMBBE0UWhwHDw+ddCAhILEgWy4WNo0tAyyZidly1AwNba1CSvJOf6h/oduC/RAN7qfkJ9BC7VM6LhQ1O3E+pN8lAPNeYHHGsV4PkFN3WzREmuwEndLUFVfQC3Xa8Jl+92RAAAAABJRU5ErkJggg==) 0px 0px no-repeat transparent;
+            margin-top: -2px;
+            margin-bottom: 0px;
+        }
+
+        .tipDown {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAXElEQVQYlYXMsQ5AQBREUSoVjQ+f+S0lSi2livJlr4ZEZDcmud3JVJIW2yPQVqXZPmwjaQXqEuJJ0vCLbrgDfRZFxBsH0GTRCybbcxF9HhPQZdEHbkUUEUg6JU0Xm2KvCU6v27kAAAAASUVORK5CYII=) 0px 0px no-repeat transparent;
+            margin-top: 0px;
+            margin-bottom: -2px;
+        }
+
+        #ShowUpBox a {
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full-screen">
+        <div class="container"><span class="error-num">5</span>
+            <div class="eye" style="transform: rotate(260.178deg);"></div>
+            <div class="eye" style="transform: rotate(260.178deg);"></div>
+            <p class="sub-text">Oh eyeballs! Something went wrong. We're <span class="italic">looking</span> to see what
+                happened.</p><a href="../../../index.html">Go back</a>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

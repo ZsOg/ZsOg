@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(10, 10, 10);
+    color: white;
+}
+.msg {
+    text-align: right;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    font-weight: 400;
+    font-family: sans-serif;
+    text-decoration: underline;
+    margin: 5px;
+}
+.main {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 50px;
+    background: rgb(15, 15, 15);
+}
+.head {
+    display: inline-flex;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    box-shadow: inset 0px 0px 21px 3px rgba(0, 0, 0, 0.75);
+    border-radius: 50px;
+    padding: 20px;
+    cursor: pointer;
+}
+.left {
+    color: rgb(21, 152, 228);
+}
+.right {
+    color: rgb(255, 0, 0);
+}
+.input.text {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+.input.text input[type='text'] {
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    background: rgb(15, 15, 15);
+    border: none;
+    border-bottom: 2px solid black;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+p {
+    text-align: right;
+    font-size: 15px;
+}
+input[type='button']{
+    padding: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    background: rgb(15, 15, 15);
+    color: rgb(138, 138, 138);
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    margin-top: 30px;
+}

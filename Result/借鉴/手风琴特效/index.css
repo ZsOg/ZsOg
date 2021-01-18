@@ -1,0 +1,536 @@
+/* 第一部分 */
+*,
+*:before,
+*:after {
+  /* box-sizing: border-box;为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制,不会因为设置了边距而使元素宽高改变 */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1f1f1f;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.cont {
+  position: relative;
+  overflow: hidden;
+  /* 100vh整个浏览器可见页面的高度 100vw就是整个宽度*/
+  /* viewport：可视窗口，也就是浏览器。
+    vw Viewport宽度， 1vw 等于viewport宽度的1%
+    vh Viewport高度， 1vh 等于viewport高的的1% */
+  height: 100vh;
+  padding: 80px 70px;
+}
+
+.cont__inner {
+  position: relative;
+  height: 100%;
+}
+/* 第二部分 */
+.el {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 19.2%;
+  height: 100%;
+  background: #ccc;
+  /* 此transition是为了当点击放大后的关闭按钮时的动画效果，两个参数时第一个为要过渡的元素名，
+  第二个为过渡时间，三个参数时第三参数为延迟执行的时间 ，用逗号隔开时可以设置多个元素的过渡效果,当元素的这些属性改变时会根据设置的实际慢慢改变*/
+  -webkit-transition: width 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s,
+    -webkit-transform 0.6s 0.7s;
+  transition: width 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s,
+    -webkit-transform 0.6s 0.7s;
+  transition: transform 0.6s 0.7s, width 0.7s, opacity 0.6s 0.7s,
+    z-index 0s 1.3s;
+  transition: transform 0.6s 0.7s, width 0.7s, opacity 0.6s 0.7s,
+    z-index 0s 1.3s, -webkit-transform 0.6s 0.7s;
+  will-change: transform, width, opacity;
+  /*will-change通过告知浏览器该元素会有哪些变化，使浏览器提前做好优化准备，增强页面渲染性能。*/
+}
+
+.el:nth-child(1) {
+  -webkit-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+  -webkit-transform-origin: 50% 50%; /*设置旋转元素的基点位置*/
+  transform-origin: 50% 50%;
+}
+.el:nth-child(2) {
+  -webkit-transform: translate3d(105.2083333333%, 0, 0);
+  transform: translate3d(105.2083333333%, 0, 0);
+  -webkit-transform-origin: 155.2083333333% 50%;
+  transform-origin: 155.2083333333% 50%;
+}
+
+.el:nth-child(3) {
+  -webkit-transform: translate3d(210.4166666667%, 0, 0);
+  transform: translate3d(210.4166666667%, 0, 0);
+  -webkit-transform-origin: 260.4166666667% 50%;
+  transform-origin: 260.4166666667% 50%;
+}
+
+.el:nth-child(4) {
+  -webkit-transform: translate3d(315.625%, 0, 0);
+  transform: translate3d(315.625%, 0, 0);
+  -webkit-transform-origin: 365.625% 50%;
+  transform-origin: 365.625% 50%;
+}
+
+.el:nth-child(5) {
+  -webkit-transform: translate3d(420.8333333333%, 0, 0);
+  transform: translate3d(420.8333333333%, 0, 0);
+  -webkit-transform-origin: 470.8333333333% 50%;
+  transform-origin: 470.8333333333% 50%;
+}
+/* 第三部分 */
+.el__overflow {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  /* -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s; */
+}
+.el__inner {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.el__bg {
+  position: relative; /*设置元素为相对定位，为了让之后的.el__bg:before伪元素设置相对定位时是相对这个元素的*/
+  width: calc(100vw - 140px);
+  /* 设置div元素的宽度为当前窗口高度-140px */
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.6s 0.7s;
+    transition: -webkit-transform 0.6s 0.7s;
+    transition: transform 0.6s 0.7s;
+    transition: transform 0.6s 0.7s, -webkit-transform 0.6s 0.7s;
+    will-change: transform;
+}
+.el:nth-child(1) .el__bg {
+  -webkit-transform: translate3d(0%, 0, 0); /*设置图片的位置*/
+  transform: translate3d(0%, 0, 0);
+}
+.el:nth-child(2) .el__bg {
+  -webkit-transform: translate3d(-19.2%, 0, 0);
+  transform: translate3d(-19.2%, 0, 0);
+}
+.el:nth-child(3) .el__bg {
+  -webkit-transform: translate3d(-38.4%, 0, 0);
+  transform: translate3d(-38.4%, 0, 0);
+}
+.el:nth-child(4) .el__bg {
+  -webkit-transform: translate3d(-57.6%, 0, 0);
+  transform: translate3d(-57.6%, 0, 0);
+}
+.el:nth-child(5) .el__bg {
+  -webkit-transform: translate3d(-76.8%, 0, 0);
+  transform: translate3d(-76.8%, 0, 0);
+}
+
+.el__bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 110%;
+  background-size: cover; /*覆盖所有背景区域*/
+  background-position: center center; /*居中*/
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.el:nth-child(1) .el__bg:before {
+  /* -webkit-transition-delay: 0s;
+    transition-delay: 0s; */
+  background-image: url("onepgscr-3.jpg"); /*把图片放在伪元素中*/
+}
+
+.el:nth-child(2) .el__bg:before {
+  /* -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s; */
+  background-image: url("onepgscr-4.jpg");
+}
+.el:nth-child(3) .el__bg:before {
+  /* -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s; */
+  background-image: url("onepgscr-5.jpg");
+}
+.el:nth-child(4) .el__bg:before {
+  /* -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s; */
+  background-image: url("onepgscr-6.jpg");
+}
+.el:nth-child(5) .el__bg:before {
+  /* -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s; */
+  background-image: url("onepgscr-7.jpg");
+}
+
+/* 第四部分 */
+/* after伪元素设置图片放大后图片上方的遮罩层效果 */
+.el__bg:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+/* 当鼠标移到这个类里面时使每个元素上面的遮罩层（el__bg:after）显示出来,
+鼠标在上面的元素的遮罩层透明度为0，提高辨识度 */
+.cont__inner:hover .el__bg:after {
+  opacity: 1;
+}
+
+/* 鼠标放在模块上时隐藏遮罩成，提高亮度 */
+.el:hover .el__bg:after {
+  opacity: 0;
+}
+
+/* 第五部分 */
+
+.el__preview-cont {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s 1.2s;
+  transition: all 0.3s 1.2s;
+}
+
+.el__heading {
+  color: #fff;
+  text-transform: uppercase; /*字母变大写*/
+  font-size: 18px;
+}
+
+/* 第六部分 */
+
+/* 放大模块的时候的样式和动画效果 */
+
+.el.s--active {
+  z-index: 1;
+  width: 100%;
+  /* 将之前的translate3d中x的值改为0，到最左边 */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: width 0.7s 0.7s, z-index 0s, -webkit-transform 0.6s;
+  transition: width 0.7s 0.7s, z-index 0s, -webkit-transform 0.6s;
+  transition: transform 0.6s, width 0.7s 0.7s, z-index 0s;
+  transition: transform 0.6s, width 0.7s 0.7s, z-index 0s,
+    -webkit-transform 0.6s;
+}
+
+/* 点击模块的时候所有的模块都是放在最左边的，所以 translate3d(0, 0, 0)*/
+.el.s--active .el__bg {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+}
+
+/* 点击以后图片需要稍微放大一点 */
+.el.s--active .el__bg:before {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* .el.s--active  是点击放大后添加的类*/
+
+.cont.s--el-active .el__bg:after {
+  -webkit-transition: opacity 0.5s 1.4s;
+  transition: opacity 0.5s 1.4s;
+  /* 遮罩层还原为1 */
+  opacity: 1 !important;
+}
+
+.cont.s--el-active .el__preview-cont {
+  opacity: 0;
+  /* 文字向下移动40像素的效果 */
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* 设置当点击除了第一个模块时的元素的样式和动画效果，比如点击第二个模块时，第一个模块透明的慢慢变为0，并且缩小0.5 */
+.cont.s--el-active .el:nth-child(1):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(0%, 0, 0); /*第一个模块的位置相对x轴0%,第二个105.2083333333%.........*/
+  transform: scale(0.5) translate3d(0%, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+
+.cont.s--el-active .el:nth-child(2):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+  transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+
+.cont.s--el-active .el:nth-child(3):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(210.4166666667%, 0, 0);
+  transform: scale(0.5) translate3d(210.4166666667%, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+
+.cont.s--el-active .el:nth-child(4):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(315.625%, 0, 0);
+  transform: scale(0.5) translate3d(315.625%, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+
+.cont.s--el-active .el:nth-child(5):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(420.8333333333%, 0, 0);
+  transform: scale(0.5) translate3d(420.8333333333%, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+
+.el:not(.s--active) {
+  /* 没有点击的时候鼠标是小手，点击后鼠标呈初始状态 */
+  cursor: pointer;
+}
+
+
+/* 第七部分 */
+
+/* 设置图片放大后的标题和关闭按钮的区域 */
+.el__content {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  opacity: 0;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+/* 点击后将.el__content 权重增加并显示 */
+.el.s--active .el__content {
+  z-index: 2;
+  opacity: 1;
+  -webkit-transition: all 0.5s 1.4s;
+  transition: all 0.5s 1.4s;
+}
+
+.el__text {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #fff;
+}
+/* 按钮盒子的位置及样式 */
+.el__close-btn {
+  z-index: -1;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  -webkit-transition: all 0s 0.45s;
+  transition: all 0s 0.45s;
+  /* 鼠标移到这显示为小手 */
+  cursor: pointer;
+}
+/* 点击后将.el__close-btn 权重增加并显示 */
+.el.s--active .el__close-btn {
+  z-index: 5;
+  opacity: 1;
+  -webkit-transition: all 0s 1.4s;
+  transition: all 0s 1.4s;
+}
+/* 给关闭按钮设置伪元素来绘制× */
+.el__close-btn:before,
+.el__close-btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 8px;
+  margin-top: -4px;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
+}
+
+/* before伪元素设置旋转45度并且往X轴偏移100% */
+.el__close-btn:before {
+  -webkit-transform: rotate(45deg) translateX(100%);
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* after同before */
+.el__close-btn:after {
+  -webkit-transform: rotate(-45deg) translateX(100%);
+  transform: rotate(-45deg) translateX(100%);
+}
+
+.el.s--active .el__close-btn:before,
+.el.s--active .el__close-btn:after {
+  opacity: 1;
+}
+
+/* 图片放大时×的显示动画效果 */
+.el.s--active .el__close-btn:before {
+  -webkit-transition: all 0.3s 1.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);/*cubic-bezier设置过渡效果动画的效果和快慢，类似的有linear|ease|ease-in|ease-out|ease-in-out*/
+  transition: all 0.3s 1.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+  -webkit-transform: rotate(45deg) translateX(0);/*让往X轴偏移的100%变回0，有个回跳的效果*/
+  transform: rotate(45deg) translateX(0);
+}
+
+.el.s--active .el__close-btn:after {
+  -webkit-transition: all 0.3s 1.55s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+  transition: all 0.3s 1.55s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+  -webkit-transform: rotate(-45deg) translateX(0);
+  transform: rotate(-45deg) translateX(0);
+}
+
+/* 第八部分 */
+/* el__index 设置每个模块底部数字的样式和动画 */
+.el__index {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: -80px;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  text-align: center;
+  font-size: 20vw;
+  line-height: 0.85;
+  font-weight: bold;
+  -webkit-transition: opacity 0.3s 1.4s, -webkit-transform 0.5s;
+  transition: opacity 0.3s 1.4s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.3s 1.4s;
+  transition: transform 0.5s, opacity 0.3s 1.4s, -webkit-transform 0.5s;
+  -webkit-transform: translate3d(0, 1vw, 0);
+  transform: translate3d(0, 1vw, 0);
+}
+
+/* 和transform: translate3d(0, 1vw, 0);搭配，鼠标移到每个模块时有个往上移的效果 */
+.el:hover .el__index {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.cont.s--el-active .el__index {
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.5s;
+  transition: opacity 0.3s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.3s;
+  transition: transform 0.5s, opacity 0.3s, -webkit-transform 0.5s;
+  opacity: 0;
+}
+/* el__index-front是设置白色的数字，el__index-back是设置黑色的数字，这样设置让它们的位置是一样的 */
+.el__index-back,
+.el__index-front {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.el__index-back {
+  color: #2f3840;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s 0.25s;
+  transition: opacity 0.25s 0.25s;
+}
+/* 鼠标移上去时显示黑色文字 */
+.el:hover .el__index-back {
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+.el__index-overlay {
+   overflow: hidden;/*设置overflow：hidden可以实现白色数字从下往上慢慢出现的效果，因为文字大小固定，当超过时会只显示下面部分 */
+  position: relative;
+  -webkit-transform: translate3d(0, 100%, 0);
+  /*el__index-overlay往下移了100%，然后el__index-overlay:before往上移100%，
+  所以el__index-overlay:before相当于还在之前的位置,
+  鼠标移到这里时el__index-overlay慢慢往上移，白色数字慢慢出现*/
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform 0.5s 0.1s;
+  transition: -webkit-transform 0.5s 0.1s;
+  transition: transform 0.5s 0.1s;
+  transition: transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  color: transparent;
+}
+.el__index-overlay:before {
+  content: attr(data-index);/*获取el__index-overlay的data-index属性获取数字*/
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  -webkit-transition: -webkit-transform 0.5s 0.1s;
+  transition: -webkit-transform 0.5s 0.1s;
+  transition: transform 0.5s 0.1s;
+  transition: transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+}
+/* 鼠标放上去时el__index-overlay慢慢往上移，白色数字慢慢出现 */
+.el:hover .el__index-overlay {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* 鼠标放上去时el__index-overlay:beforey相对于el__index-overlay慢慢往下移，白色数字慢慢出现 */
+.el:hover .el__index-overlay:before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+

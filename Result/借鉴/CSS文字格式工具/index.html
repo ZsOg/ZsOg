@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Image/css.jpg" type="image/jpg">
+    <title>CSS文字格式工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>CSS文字格式工具</h3>
+    <p>选择字体：<select onchange="pickFont()" id="fontPicker">
+        <optgroup label="Sans-serif">
+            <option value="Arial" style="font-family: Arial;">Arial</option>
+            <option value="Helvetica" style="font-family: Helvetica;">Helvetica</option>
+            <option value="Charcoal" style="font-family: Charcoal;">Charcoal</option>
+        </optgroup>
+        <option value="cursive" style="font-family: cursive;">Cursive</option>
+        <optgroup label="Serif" style="font-family: serif;">
+            <option value="Times" style="font-family: Times;">Times</option>
+            <option value="Georgia" style="font-family: Georgia;">Georgia</option>
+            <option value="Palatino" style="font-family: Palatino;">Palatino</option>
+        </optgroup>
+        <optgroup label="Monospace" style="font-family: monospace;">
+            <option value="courier" style="font-family: Courier;">Courier</option>
+            <option value="monaco" style="font-family: monaco;">Monaco</option>
+        </optgroup>
+    </select></p>
+    <p>选择文字对齐方式：<select name="textAlignment" id="alignment" onchange="align();">
+        <option value="left">左对齐</option>
+        <option value="center">居中对齐</option>
+        <option value="right">右对齐</option>
+        <option value="justify">两端对齐</option>
+    </select></p>
+    <p>选择字体大小：<input type="range" id="sizer" min="1" max="100" value="15" oninput="setSize()" style="width: 200px;"><span id="size">15px</span></p>
+    <p>选择行高：<input type="range" id="heighter" min="1" max="50" value="15" oninput="setHeight()" style="width: 200px;"><span id="height">1.5</span></p>
+    <p>选择字体粗细：<input type="range" id="weighter" min="1" max="9" value="4" oninput="setWeight()" style="width: 200px;"><span id="weight">400</span></p>
+    <p>通过代码选择文本颜色：<input type="color" id="textColorMenu" oninput="setTextColor();"></p>
+    <p>通过代码选择背景色：<input type="color" value="#FFFFFF" id="backgroundColorMenu" oninput="setBackgroundColor();"></p>
+    <p><input type="checkbox" oninput="setItalic();"><span style="font-style: italic;">斜体</span></p>
+    <p>
+        <input type="checkbox" oninput="overline=!overline; textDecoration();"><span style="text-decoration: overline;">上划线</span>&MediumSpace;
+        <input type="checkbox" oninput="lineThrough=!lineThrough; textDecoration();"><span style="text-decoration: line-through;">删除线</span>&MediumSpace;
+        <input type="checkbox" oninput="underline=!underline; textDecoration();"><span style="text-decoration: underline;">下划线</span>&MediumSpace;
+    </p>
+    <p>
+        <input type="radio" class="tdsb" id="solidb" oninput="wavy = false; dotted = false; double = false; dashed = false; setDecorationStyle();" disabled checked><span style="text-decoration: underline solid;">直线</span>
+        <input type="radio" class="tdsb" id="wavyb" oninput="wavy = true; dotted = false; double = false; dashed = false; setDecorationStyle();" disabled><span style="text-decoration: underline wavy;">波浪线</span>
+        <input type="radio" class="tdsb" id="dashedb" oninput="wavy = false; dotted = false; double = false; dashed = true; setDecorationStyle();" disabled><span style="text-decoration: underline dashed;">虚线</span>
+        <input type="radio" class="tdsb" id="dottedb" oninput="wavy = false; dotted = true; double = false; dashed = false; setDecorationStyle();" disabled><span style="text-decoration: underline dotted;">点线</span>
+        <input type="radio" class="tdsb" id="doubleb" oninput="wavy = false; dotted = false; double = true; dashed = false; setDecorationStyle();" disabled><span style="text-decoration: underline double;">双线</span>
+    </p>
+    <input type="checkbox" id="shadows" onclick="hasShadow = !hasShadow; setShadow();">阴影
+    <br>&ThickSpace; &ThickSpace; 横: <input type="range" id="horizontalShadow" min="-20" max="20" value="2" oninput="setShadowValues();" disabled> &ThickSpace; 
+        竖: <input type="range" id="verticalShadow" min="-20" max="20" value="2" oninput="setShadowValues();" disabled>
+    <br>&ThickSpace; &ThickSpace; 模糊: <input type="range" id="blurShadow" min="0" max="10" value="0" oninput="setShadowValues();" disabled> &ThickSpace;
+        颜色: <input type="color" id="colorShadow" value="#ff0000" oninput="setShadowValues();" disabled>
+    <br><br>
+    <button onclick="pickSampleText(sampleTextOne)">示例文字一</button>
+    <button onclick="pickSampleText(sampleTextTwo)">示例文字二</button>
+    <button onclick="sampleTextThree=randomNumericString(sampleTextThree,48); pickSampleText(sampleTextThree)">随机数字</button>
+    <p id="something">A little bird fly to south for the winter. It was very cold, almost frozen bird. 
+        Hence, fly to a large space, after a cow there, in a pile of cow dung upon the bird, frozen bird lying on the dunghill, feel very warm, gradually recovered, it is warm and comfortable lying, and soon began to sing songs, a passing wildcat hear voices, see, follow the voice, wildcats quickly found lying on the dunghill, bird, pull it out."
+    </p>
+    <button onclick="getCSS()">获得CSS代码</button>
+    <center>
+        <div id="box">
+            <p id="output"></p>
+            <button onclick="toClipboard(CSSCodeNoFormat);">复制到剪贴板</button>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <script src="script.js"></script>
+</body>
+</html>

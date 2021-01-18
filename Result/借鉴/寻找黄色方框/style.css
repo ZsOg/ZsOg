@@ -1,0 +1,10 @@
+div {
+    width: 10px;
+    height: 10px;
+    background-color: silver;
+    border: 2px solid black;
+    padding: 8px 8px;
+    float: left;
+    margin: 1px;
+    cursor: pointer;
+}

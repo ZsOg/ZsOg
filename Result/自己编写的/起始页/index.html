@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起始页</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="./js/showTime.js"></script>
+    <script src="./js/search.js"></script>
+    <link rel="stylesheet" href="./css/dropmenu.scss">
+    <script src="./js/dropdown.js"></script>
+</head>
+<body>
+    <div id="time">
+        <div id="showTime_1"></div>
+    </div>
+    <div id="menu">
+        <input type="button" id="setting" value="设置" onclick="showSettings()">
+        <div id="settings" style="display: none;">
+            <h2>设 置 &gt;</h2>
+            <input type="button" value="X" onclick="hideSettings()">
+            <div id="timeSettings">
+                <h3>时间设置 &gt;</h3>
+                <div id="showSec">
+                    <h4>显示秒钟<input type="checkbox" oninput="showSec();" id="showSec"></h4>
+                </div>
+                <div id="showCal">
+                    <h4>显示日历<input type="checkbox" oninput="showCal();" id="showCal"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="search">
+        <div id="searchBox">
+            <div id="searchEngine">
+                <div id="selectSearchEngine">
+                    <select data-menu>
+                        <option selected>百度</option>
+                        <option>谷歌</option>
+                        <option>必应</option>
+                        <option>Magi</option>
+                    </select>
+                    
+                </div>
+            </div>
+            <div id="searchBar">
+                <input type="search" id="searchInput" placeholder="search">
+                <input type="submit" value="搜索" onclick="search()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

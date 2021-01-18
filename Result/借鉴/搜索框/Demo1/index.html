@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>jQuery+CSS3创意搜索框特效</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="search-form.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form onsubmit="submitFn(this, event);">
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input type="text" class="search-input" placeholder="请输入关键词">
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span class="close" onclick="searchToggle(this, event);"></span>
+            <div class="result-container" style="display: none;"></div>
+        </div>
+    </form>
+    <script src="jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <div>
+        <div class="_th-container">
+            <div class="_th-click-hover _item-input" onclick="changeTime()">
+                x1
+            </div>
+            <div class="_th-item _item-x2">&gt;</div>
+            <div class="_th-item _item-x-2">&lt;</div>
+            <div class="_th-item _item-x4">&gt;&gt;</div>
+            <div class="_th-item _item-x-4">&lt;&lt;</div>
+            <div class="_th-item _item-reset">O</div>
+        </div>
+        <div class="_th_cover-all-show-times _th_hidden">
+            <div class="_th_times">x1</div>
+        </div>
+    </div>
+</body>
+
+</html>
