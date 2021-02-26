@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,25 +9,28 @@
     <title>SG星皇</title>
     <link href="./index/index-css/minireset.min.css" rel="stylesheet">
     <link href="./index/index-css/main.css" rel="stylesheet">
-    <link rel="icon" href="./index/index-img/icon.png">
+    <link rel="icon" href="https://stargolx.github.io/Resources/img/icon/about_me.png">
+    <!-- Some scripts -->
+    <script src="./index/index-js/jquery.min.js"></script>
+    <script src="./index/index-js/main.js"></script>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177082203-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-177082203-1');
-    </script>
-
 </head>
-
 <body>
-    <!-- Loading hover -->
+    <div id="gtag">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177082203-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-177082203-1');
+        </script>
+    </div>
     <div class="loading">
+        <!-- Loading hover -->
         <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
@@ -42,7 +44,7 @@
         <div class="content">
             <div class="left">
                 <div class="avatar">
-                    <img src="index-img/logo.jpg">
+                    <img src="https://stargolx.github.io/Resources/img/logo/sg_1.jpg">
                 </div>
                 <ul class="menu">
                     <li>
@@ -73,6 +75,7 @@
                     <h1>编程</h1>
                     <ul class="HTML">
                         <a href="./error.html">HTML</a>
+                        <a href="https://stargolx.github.io/HTML/" style="display: none;">HTML</a>
                     </ul>
                     <ul class="ZeroStartPage">
                         <a href="https://stargolx.github.io/ZeroStartPage/">Zero起始页</a>
@@ -101,13 +104,10 @@
             <div class="copyright-mobile">
                 Made with
                 <i class="fa fa-heart"></i> by
-                <a href="index.html" target="_blank">StarGolx</a>
+                <a href="#" target="_blank">StarGolx</a>
+
             </div>
         </footer>
     </main>
-    <!-- Some scripts -->
-    <script src="index-js/jquery.min.js"></script>
-    <script src="index-js/main.js"></script>
 </body>
-
 </html>
