@@ -13,4 +13,4 @@ HTML: https://stargolx.github.io/HTML/
 资源（无法显示）：https://stargolx.github.io/Resources/
 <br>
 ## CSS:
-AFont: https://stargolx.github.io/afont/css/a-font.sg.css
+AFont: https://github.com/StarGolx/afont/
