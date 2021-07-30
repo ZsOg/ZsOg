@@ -1,6 +1,6 @@
 # StarGolx
 ## 网站：
-旧网站：https://stargolx.github.io/
+旧网站（已不可用）：https://stargolx.github.io/
 <br>
 新网站：https://stargolx.wordpress.com/
 <br>
