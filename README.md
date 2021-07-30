@@ -1,6 +1,8 @@
 # StarGolx
 ## 网站：
-我的网站：https://stargolx.github.io/
+旧网站：https://stargolx.github.io/
+<br>
+新网站：https://stargolx.wordpress.com/
 <br>
 起始页：https://stargolx.github.io/ZeroStartPage/
 <br>
