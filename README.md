@@ -8,10 +8,6 @@
 <br>
 工具箱（已不可用）：https://stargolx.github.io/ToolBox/
 <br>
-HTML（已不可用）: https://stargolx.github.io/HTML/
-<br>
-游戏（已不可用）：https://stargolx.github.io/Games/
-<br>
 资源（无法显示）（已不可用）：https://stargolx.github.io/Resources/
 <br>
 ## CSS:
