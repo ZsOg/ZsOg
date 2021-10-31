@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 ## 网站：
 旧网站（已不可用）：https://stargolx.github.io/
 <br>
-新网站：https://stargolx.wordpress.com/
+新网站：https://stargolx.code.blog/
 <br>
 起始页（已不可用）：https://stargolx.github.io/ZeroStartPage/
 <br>
