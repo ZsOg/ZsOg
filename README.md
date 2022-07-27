@@ -27,4 +27,4 @@ Here are some ideas to get you started:
 资源（无法显示）（已可用）：https://stargolx.github.io/Resources/
 <br>
 ## CSS:
-AFont（已可用）: https://github.com/StarGolx/afont/
+AFont（无法显示）（已可用）: https://github.com/StarGolx/afont/
