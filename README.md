@@ -20,7 +20,7 @@ Here are some ideas to get you started:
 <br>
 新网站：https://stargolx.code.blog/
 <br>
-起始页（已可用）：https://stargolx.github.io/ZeroStartPage/
+起始页（已可用）：https://stargolx.github.io/StartPage/
 <br>
 工具箱（已可用）：https://stargolx.github.io/ToolBox/
 <br>
