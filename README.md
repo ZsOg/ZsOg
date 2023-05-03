@@ -1,6 +1,6 @@
 # StarGolx
 ## GitHub Stats
-![Creckeryop's github stats](https://github-readme-stats.vercel.app/api?username=stargolx&show_icons=true)
+![Creckeryop's github stats](https://github-readme-stats.vercel.app/api?username=zsog&show_icons=true)
 <br>
 <!--
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=stargolx&layout=compact)
